@@ -2,19 +2,16 @@ require "rails_helper"
 
 RSpec.feature "User can search for products" do
   scenario "they see items" do
-    # As a user
-    # When I visit the "/"
     visit "/"
-    # And I fill in the search box with "sennheiser" and click "search"
     fill_in "search", with: "sennheiser"
     click_on "search"
 
-    # Then my current path should be "/search"
     expect(current_path).to eq "/search"
 
-    binding.pry
-    # And I should see exactly 15 results
-    # And each result should contain sku, name, customer average review, short description, sale price, and image ONLY
+    expect(page).to have_content "15: Sennheiser - CX 3.00 Earbud Headphones - Red"
+    expect(page).to have_content "1: Sennheiser - Camera-Mount Wireless Microphone System - Black"
+    expect(page).to have_content "SKU: 9678429"
+    expect(page).to have_content "Price: $629.95"
   end
 end
 
