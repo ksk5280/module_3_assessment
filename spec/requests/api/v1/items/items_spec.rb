@@ -18,10 +18,29 @@ RSpec.describe "GET /api/v1/items" do
   end
 end
 
-When I send a GET request to /api/v1/items/1 I receive a 200 JSON response containing the name, description, and image_url but not the created_at or updated_at
+RSpec.describe "GET api/v1/items/1" do
+  it "returns the item with id: 1" do
+    item1 = Item.create(name: "Item 1", description: "Description 1", image_url: "image_url: 1")
+    item2 = Item.create(name: "Item 2", description: "Description 2", image_url: "image_url: 2")
+    item3 = Item.create(name: "Item 3", description: "Description 3", image_url: "image_url: 3")
 
-When I send a DELETE request to /api/v1/items/1 I receive a 204 JSON response if the record is successfully deleted
+    get "api/v1/items/1"
 
-When I send a POST request to /api/v1/items with a name, description, and image_url I receive a 201 JSON response if the record is successfully created And I receive a JSON response containing the name, description, and image_url but not the created_at or updated_at
+    json = JSON.parse(response.body)
 
-Verify that your API works using Postman or curl
+    expect(response).to be_success
+    expect(json["name"]).to eq "Item 1"
+    expect(json["description"]).to eq "Description 1"
+    expect(json["image_url"]).to eq "image_url: 1"
+  end
+end
+
+# When I send a GET request to /api/v1/items/1
+# I receive a 200 JSON response containing the name, description, and image_url
+# but not the created_at or updated_at
+
+# When I send a DELETE request to /api/v1/items/1 I receive a 204 JSON response if the record is successfully deleted
+#
+# When I send a POST request to /api/v1/items with a name, description, and image_url I receive a 201 JSON response if the record is successfully created And I receive a JSON response containing the name, description, and image_url but not the created_at or updated_at
+#
+# Verify that your API works using Postman or curl
