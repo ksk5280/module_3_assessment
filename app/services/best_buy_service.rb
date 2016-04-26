@@ -4,7 +4,7 @@ class BestBuyService
   end
 
   def products(search_text, params=nil)
-    parse(connection.get("v1/products((search=#{search_text}))", params))
+    parse(connection.get("v1/products(longDescription=#{search_text}*)", params))
   end
 
   private

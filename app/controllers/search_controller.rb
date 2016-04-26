@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    binding.pry
+    @products = Product.find_by(params[:search])
   end
 end
