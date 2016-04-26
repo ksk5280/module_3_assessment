@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bestbuy.com/v1/products((search=sennheiser))?apiKey=zvkqfuc5vws6ytvedk2qwf4n&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku&sort=name.asc
+    uri: https://api.bestbuy.com/v1/products(longDescription=sennheiser*)?apiKey=zvkqfuc5vws6ytvedk2qwf4n&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku&sort=name.asc
     body:
       encoding: US-ASCII
       string: ''
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       X-Mashery-Responder:
-      - prod-j-worker-lax-02.mashery.com
+      - prod-j-worker-lax-03.mashery.com
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '7041'
+      - '7379'
       Server:
       - thin 1.6.1 codename Death Proof
       Date:
-      - Tue, 26 Apr 2016 16:15:38 GMT
+      - Tue, 26 Apr 2016 17:09:35 GMT
       Connection:
       - close
     body:
@@ -36,94 +36,14 @@ http_interactions:
         {
           "from": 1,
           "to": 15,
-          "total": 160,
+          "total": 127,
           "currentPage": 1,
-          "totalPages": 11,
-          "queryTime": "0.003",
-          "totalTime": "0.022",
+          "totalPages": 9,
+          "queryTime": "0.005",
+          "totalTime": "0.038",
           "partial": false,
-          "canonicalUrl": "/v1/products((search=\"sennheiser\"))?show=name,customerReviewAverage,shortDescription,salePrice,image,sku&format=json&apiKey=zvkqfuc5vws6ytvedk2qwf4n",
+          "canonicalUrl": "/v1/products(longDescription=\"sennheiser*\")?show=name,customerReviewAverage,shortDescription,salePrice,image,sku&format=json&apiKey=zvkqfuc5vws6ytvedk2qwf4n",
           "products": [
-            {
-              "name": "Galaxy Audio - Headset Microphone - Beige",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Headset Microphone: Crafted for most wireless transmitters; can be used with a JIB/PB; works with most PC sound cards; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/4763/4763330_sa.jpg",
-              "sku": 4763330
-            },
-            {
-              "name": "Galaxy Audio - Headset Microphone - Black",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Headset Microphone: Compatible with most wireless transmitters; can be used with a JIB/PB; works with most PC sound cards; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/4763/4763305_sa.jpg",
-              "sku": 4763305
-            },
-            {
-              "name": "Galaxy Audio - Headset Microphone - Black",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Headset Microphone: Crafted for most wireless transmitters; can be used with a JIB/PB; works with most PC sound cards; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/4763/4763306_sa.jpg",
-              "sku": 4763306
-            },
-            {
-              "name": "Galaxy Audio - Headset Microphone - Cocoa",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Headset Microphone: Crafted for most wireless transmitters; can be used with a JIB/PB; works with most PC sound cards; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/4763/4763315_sa.jpg",
-              "sku": 4763315
-            },
-            {
-              "name": "Galaxy Audio - Headset Microphone - Cocoa",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Headset Microphone: Compatible with most wireless transmitters; can be used with a JIB/PB; works with most PC sound cards; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/pac/products/1313/1313422701/1313422701_sa.jpg",
-              "sku": 4763316
-            },
-            {
-              "name": "Galaxy Audio - Omnidirectional Headset Microphone - Beige",
-              "customerReviewAverage": null,
-              "shortDescription": "GALAXY AUDIO Omnidirectional Headset Microphone: Designed for select Sennheiser wireless devices; omnidirectional polar pattern; 20Hz - 20kHz frequency response; -65dB sensitivity; flexible fit design",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/4763/4763322_sa.jpg",
-              "sku": 4763322
-            },
-            {
-              "name": "Sennheiser - Active Noise-Canceling Headphones - Black",
-              "customerReviewAverage": "2.7",
-              "shortDescription": "From our expanded online assortment; TalkThrough function; NoiseGard Digital noise cancellation; 10mm drivers",
-              "salePrice": 229.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/2602/2602352_sa.jpg",
-              "sku": 2602352
-            },
-            {
-              "name": "Sennheiser - Audiophile Over-the-Ear Headphones - Titan",
-              "customerReviewAverage": "4.5",
-              "shortDescription": "Eargonomic Acoustic Refinement technology; Duofol diaphragm technology; neodymium ferrous magnet; aluminum voice coils",
-              "salePrice": 179.98,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/1700/1700513_sa.jpg",
-              "sku": 1700513
-            },
-            {
-              "name": "Sennheiser - Binaural Headphone - Black",
-              "customerReviewAverage": "4.5",
-              "shortDescription": "Stereo - Black - Wireless - RF - 60 ft - 32 Ohm - 18 Hz 21 kHz - Over-the-head - Binaural - Circumaural",
-              "salePrice": 199.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9637/9637018_sa.jpg",
-              "sku": 9637018
-            },
-            {
-              "name": "Sennheiser - Binaural Headphone - Black",
-              "customerReviewAverage": "4.4",
-              "shortDescription": "Wired Connectivity - Surround - Over-the-head - Black",
-              "salePrice": 69.99,
-              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9636/9636974_rc.jpg",
-              "sku": 9636974
-            },
             {
               "name": "Sennheiser - Camera-Mount Wireless Microphone System - Black",
               "customerReviewAverage": null,
@@ -163,9 +83,89 @@ http_interactions:
               "salePrice": 379.99,
               "image": "http://img.bbystatic.com/BestBuy_US/images/products/6131/6131445_rc.jpg",
               "sku": 6131445
+            },
+            {
+              "name": "Sennheiser - ClipMic digital Omnidirectional  Condenser Microphone - black",
+              "customerReviewAverage": null,
+              "shortDescription": "Designed to deliver high-quality recordings;        small design;        high-quality sound recording; a precise clip-on microphone;        the lightning connector.",
+              "salePrice": 199.00,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/5048/5048900_sa.jpg",
+              "sku": 5048900
+            },
+            {
+              "name": "Sennheiser - Connection Cable for Sennheiser MKE 600 Microphone",
+              "customerReviewAverage": null,
+              "shortDescription": "SENNHEISER Connection Cable for Sennheiser MKE 600 Microphone: Connects Sennheiser MKE 600 microphone to most smartphones; XLR-3 connector-to-3.5mm jack plug; coiled cable",
+              "salePrice": 19.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9678/9678438_sa.jpg",
+              "sku": 9678438
+            },
+            {
+              "name": "Sennheiser - CX 1.00 Earbud Headphones - Black",
+              "customerReviewAverage": "5.0",
+              "shortDescription": "SENNHEISER CX 1.00 Earbud Headphones: Noise-blocking design; dynamic transducer principle; ultrasmall design; 3.5mm connector; 3.9' cable; includes 4 sizes of ear adapters",
+              "salePrice": 44.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068146_sa.jpg",
+              "sku": 9068146
+            },
+            {
+              "name": "Sennheiser - CX 1.00 Earbud Headphones - White",
+              "customerReviewAverage": "5.0",
+              "shortDescription": "SENNHEISER CX 1.00 Earbud Headphones: Noise-blocking design; dynamic transducer principle; ultrasmall design; 3.5mm connector; 3.9' cable; includes 4 sizes of ear adapters",
+              "salePrice": 44.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068191_sa.jpg",
+              "sku": 9068191
+            },
+            {
+              "name": "Sennheiser - CX 2.00G Earbud Headphones - Black",
+              "customerReviewAverage": "3.0",
+              "shortDescription": "SENNHEISER CX 2.00G Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated microphone; 4 ear adapter sizes; 3.9' cable; 3.5mm angled plug",
+              "salePrice": 54.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068164_sa.jpg",
+              "sku": 9068164
+            },
+            {
+              "name": "Sennheiser - CX 2.00G Earbud Headphones - White",
+              "customerReviewAverage": "3.0",
+              "shortDescription": "SENNHEISER CX 2.00G Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated microphone; 4 ear adapter sizes; 3.9' cable; 3.5mm angled plug",
+              "salePrice": 54.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068155_sa.jpg",
+              "sku": 9068155
+            },
+            {
+              "name": "Sennheiser - CX 2.00i Earbud Headphones - Black",
+              "customerReviewAverage": null,
+              "shortDescription": "SENNHEISER CX 2.00i Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated microphone; 4 ear adapter sizes; 3.9' cable; 3.5mm angled plug",
+              "salePrice": 54.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068031_sa.jpg",
+              "sku": 9068031
+            },
+            {
+              "name": "Sennheiser - CX 2.00i Earbud Headphones - White",
+              "customerReviewAverage": null,
+              "shortDescription": "SENNHEISER CX 2.00i Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated microphone; 4 ear adapter sizes; 3.9' cable; 3.5mm angled plug",
+              "salePrice": 54.95,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068182_sa.jpg",
+              "sku": 9068182
+            },
+            {
+              "name": "Sennheiser - CX 3.00 Earbud Headphones - Black",
+              "customerReviewAverage": "3.5",
+              "shortDescription": "SENNHEISER CX 3.00 Earbud Headphones: Dynamic transducers; 4 ear adapter sizes; 3.9' elliptical, tangle-free cable; 3.5mm angled plug; includes a carrying case",
+              "salePrice": 51.99,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068119_sa.jpg",
+              "sku": 9068119
+            },
+            {
+              "name": "Sennheiser - CX 3.00 Earbud Headphones - Red",
+              "customerReviewAverage": "3.5",
+              "shortDescription": "SENNHEISER CX 3.00 Earbud Headphones: Dynamic transducers; 4 ear adapter sizes; 3.9' elliptical, tangle-free cable; 3.5mm angled plug; includes a carrying case",
+              "salePrice": 50.99,
+              "image": "http://img.bbystatic.com/BestBuy_US/images/products/9068/9068022_sa.jpg",
+              "sku": 9068022
             }
           ]
         }
     http_version: 
-  recorded_at: Tue, 26 Apr 2016 16:15:38 GMT
+  recorded_at: Tue, 26 Apr 2016 17:09:35 GMT
 recorded_with: VCR 3.0.1

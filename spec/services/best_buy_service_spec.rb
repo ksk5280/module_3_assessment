@@ -13,16 +13,15 @@ RSpec.describe BestBuyService do
 
       search_text = "sennheiser"
       result = service.products(search_text, params)
-      binding.pry
 
       expect(result[:products].count).to eq 15
-      expect(result[:products][0][:name]).to eq "Galaxy Audio - Headset Microphone - Beige"
-      expect(result[:products][0][:salePrice]).to eq 199.99
-      expect(result[:products][0][:sku]).to eq 4763330
+      expect(result[:products][0][:name]).to eq "Sennheiser - Camera-Mount Wireless Microphone System - Black"
+      expect(result[:products][0][:salePrice]).to eq 629.95
+      expect(result[:products][0][:sku]).to eq 9678429
 
-      expect(result[:products][14][:name]).to eq "Sennheiser - CH 800 S 10' Balanced Headphone Cable - Black"
-      expect(result[:products][14][:salePrice]).to eq 379.99
-      expect(result[:products][14][:sku]).to eq 6131445
+      expect(result[:products][14][:name]).to eq "Sennheiser - CX 3.00 Earbud Headphones - Red"
+      expect(result[:products][14][:salePrice]).to eq 50.99
+      expect(result[:products][14][:sku]).to eq 9068022
     end
   end
 end
