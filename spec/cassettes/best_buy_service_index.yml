@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bestbuy.com/v1/products?api_key=zvkqfuc5vws6ytvedk2qwf4n&callback=JSON_CALLBACK&facet=name&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku%26&sort=name.asc
+    uri: https://api.bestbuy.com/v1/products?apiKey=zvkqfuc5vws6ytvedk2qwf4n&callback=JSON_CALLBACK&facet=name&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku%26&sort=name.asc
     body:
       encoding: US-ASCII
       string: ''
@@ -15,63 +15,51 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 403
-      message: Forbidden
-    headers:
-      X-Mashery-Responder:
-      - prod-j-worker-lax-01.mashery.com
-      X-Error-Detail-Header:
-      - Account Inactive
-      X-Mashery-Error-Code:
-      - ERR_403_DEVELOPER_INACTIVE
-      Content-Type:
-      - text/xml
-      Date:
-      - Tue, 26 Apr 2016 15:46:04 GMT
-      Server:
-      - Mashery Proxy
-      Content-Length:
-      - '80'
-    body:
-      encoding: UTF-8
-      string: "<h1>Developer Inactive. Contact developer@bestbuy.com for more information.</h1>"
-    http_version: 
-  recorded_at: Tue, 26 Apr 2016 15:46:05 GMT
-- request:
-    method: get
-    uri: https://api.bestbuy.com/v1/products?callback=JSON_CALLBACK&facet=name&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku%26&sort=name.asc
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       X-Mashery-Responder:
       - prod-j-worker-lax-04.mashery.com
-      X-Error-Detail-Header:
-      - Account Inactive
-      X-Mashery-Error-Code:
-      - ERR_403_DEVELOPER_INACTIVE
       Content-Type:
-      - text/xml
-      Date:
-      - Tue, 26 Apr 2016 15:46:59 GMT
-      Server:
-      - Mashery Proxy
+      - application/json; charset=UTF-8
       Content-Length:
-      - '80'
+      - '3006'
+      Server:
+      - thin 1.6.1 codename Death Proof
+      Date:
+      - Tue, 26 Apr 2016 15:50:03 GMT
+      Connection:
+      - close
     body:
       encoding: UTF-8
-      string: "<h1>Developer Inactive. Contact developer@bestbuy.com for more information.</h1>"
+      string: |-
+        JSON_CALLBACK({
+          "error": {
+            "code": 400,
+            "status": "400 Bad Request",
+            "message": "Couldn't understand '/v1/products?apiKey=zvkqfuc5vws6ytvedk2qwf4n&callback=JSON_CALLBACK&facet=name&format=json&pageSize=15&show=name,customerReviewAverage,shortDescription,salePrice,image,sku&&sort=name.asc': Failed at character 172.",
+            "examples": [
+              "/v1/products/8880044.xml?apiKey=<YourApiKey> : Get product information for sku 8880044; display as XML",
+              "/v1/stores/187.json?apiKey=<YourApiKey> : Get information for store 187; display as JSON",
+              "/v1/reviews/2242984.json?callback=MyCallback&apiKey=<YourApiKey> : Get review 2242984; display as JSON, with callback function MyCallback",
+              "/v1/products?apiKey=<YourApiKey> : Get all products; show the first 10, sorted by name, display default attributes, formatted as xml",
+              "/v1/products?facet=manufacturer,10&apiKey=<YourApiKey> : Get all products; show the first 10, sorted by name, display default attributes, formatted as xml, and display up to 10 facets based on the \"manufacturer\" field.",
+              "/v1/products?pageSize=50&page=4&apiKey=<YourApiKey> : Get page 4 of all products, 50 products per page",
+              "/v1/products?show=sku,name,salePrice&apiKey=<YourApiKey> : Get all products, display only sku, name, and SalePrice for each",
+              "/v1/products?sort=regularPrice.desc&apiKey=<YourApiKey> : Get all products, sort descending by regular price (most expensive first)",
+              "/v1/products(manufacturer=canon)?apiKey=<YourApiKey> : Get all products manufactured by Canon",
+              "/v1/products(salePrice<299.99)?apiKey=<YourApiKey> : Get all products whose sale price is less than $299.99",
+              "/v1/products(manufacturer=canon&salePrice<299.99)?apiKey=<YourApiKey> : Get Canon products with sale price less than $299.99",
+              "/v1/products(sku in(9909482,1221963,9491935))?apiKey=<YourApiKey> : Get products whose sku is in the list (9909482,1221963,9491935)",
+              "/v1/products(wifiReady=true|wifiBuiltIn=true)?apiKey=<YourApiKey> : Get products that are either Wi-Fi ready, OR have Wi-Fi built in",
+              "/v1/products(name=castlevania*)?apiKey=<YourApiKey> : Get physical (not downloadable) products with \"castlevania\" in name",
+              "/v1/products(name=castlevania*&digital=true)?apiKey=<YourApiKey> : Get downloadable products with \"castlevania\" in name",
+              "/v1/products(name=castlevania*&digital=*)?apiKey=<YourApiKey> : Get products, physical or downloadable, with \"castlevania\" in name",
+              "/v1/stores(area(55423,10))?show=storeId,name,hours,distance&apiKey=<YourApiKey> : Get stores within 10 miles of zip code 55423; show store number, name, store hours, and distance from zip code reference point",
+              "/v1/stores(area(55423,10))+products(sku in(9909482,1221963,9491935))?show=storeId,name,products.sku,products.name&apiKey=<YourApiKey> : Get stores within 10 miles of zip code 55423, and show which skus, of 9909482, 1221963, or 9491935, each store has in stock"
+            ]
+          }
+        })
     http_version: 
-  recorded_at: Tue, 26 Apr 2016 15:46:59 GMT
+  recorded_at: Tue, 26 Apr 2016 15:50:03 GMT
 recorded_with: VCR 3.0.1

@@ -12,7 +12,8 @@ RSpec.describe BestBuyService do
         callback: "JSON_CALLBACK",
         format: "json"
       }
-      result = service.products(params)
+
+      result = service.products("sennheiser", params)
     end
   end
 end
