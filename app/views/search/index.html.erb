@@ -1,0 +1,12 @@
+<h1>Searched Items</h1>
+
+<% @products.each_with_index do |product, index| %>
+  <h3><%= index + 1 %>: <%= product.name %></h3>
+  <ul>
+    <li>SKU: <%= product.sku %></li>
+    <li><%= product.shortDescription %></li>
+    <li>Price: $<%= product.salePrice %></li>
+    <li><%= image_tag("#{product.image}")%></li>
+    <li>Average Customer Review: <%= product.customerReviewAverage %></li>
+  </ul>
+<% end %>
