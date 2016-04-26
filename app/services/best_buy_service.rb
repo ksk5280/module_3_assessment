@@ -3,8 +3,8 @@ class BestBuyService
     connection.params["apiKey"] = ENV["BEST_BUY_API_KEY"]
   end
 
-  def products(searched, params=nil)
-    parse(connection.get("v1/products((search=#{searched}))", params))
+  def products(search_text, params=nil)
+    parse(connection.get("v1/products((search=#{search_text}))", params))
   end
 
   private
@@ -13,15 +13,6 @@ class BestBuyService
     end
 
     def parse(response)
-      binding.pry
       JSON.parse(response.body).deep_symbolize_keys
     end
 end
-
-# https://api.bestbuy.com/v1/products((search=sennheiser))?
-    # sort=name.asc&
-    # show=name,customerReviewAverage,shortDescription,salePrice,image,sku&
-    # facet=name&
-    # pageSize=15&
-    # callback=JSON_CALLBACK&
-    # format=json

@@ -6,14 +6,22 @@ RSpec.describe BestBuyService do
       service = BestBuyService.new
       params = {
         sort: "name.asc",
-        show: "name,customerReviewAverage,shortDescription,salePrice,image,sku&",
-        facet: "name",
+        show: "name,customerReviewAverage,shortDescription,salePrice,image,sku",
         pageSize: "15",
-        callback: "JSON_CALLBACK",
         format: "json"
       }
 
-      result = service.products("sennheiser", params)
+      search_text = "sennheiser"
+      result = service.products(search_text, params)
+
+      expect(result[:products].count).to eq 15
+      expect(result[:products][0][:name]).to eq "Galaxy Audio - Headset Microphone - Beige"
+      expect(result[:products][0][:salePrice]).to eq 199.99
+      expect(result[:products][0][:sku]).to eq 4763330
+
+      expect(result[:products][14][:name]).to eq "Sennheiser - CH 800 S 10' Balanced Headphone Cable - Black"
+      expect(result[:products][14][:salePrice]).to eq 379.99
+      expect(result[:products][14][:sku]).to eq 6131445
     end
   end
 end
