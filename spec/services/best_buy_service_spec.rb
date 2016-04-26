@@ -4,7 +4,15 @@ RSpec.describe BestBuyService do
   it "returns products" do
     VCR.use_cassette("best_buy_service#index") do
       service = BestBuyService.new
-      result = service.index
+      params = {
+        sort: "name.asc",
+        show: "name,customerReviewAverage,shortDescription,salePrice,image,sku&",
+        facet: "name",
+        pageSize: "15",
+        callback: "JSON_CALLBACK",
+        format: "json"
+      }
+      result = service.products(params)
     end
   end
 end
