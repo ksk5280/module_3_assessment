@@ -12,6 +12,7 @@ RSpec.feature "User can search for products" do
     # Then my current path should be "/search"
     expect(current_path).to eq "/search"
 
+    binding.pry
     # And I should see exactly 15 results
     # And each result should contain sku, name, customer average review, short description, sale price, and image ONLY
   end
