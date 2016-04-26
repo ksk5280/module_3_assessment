@@ -1,15 +1,18 @@
 class BestBuyService
   def initialize
+    binding.pry
+    @_connection = Faraday.new("https://api.bestbuy.com")
     connection.params["api_key"] = ENV["BEST_BUY_API_KEY"]
   end
 
-  def products(params)
+  def products(params=nil)
     parse(connection.get("v1/products", params))
   end
 
   private
     def connection
-      @_connection ||= Faraday.new("https://api.bestbuy.com")
+      @_connection
+      # @_connection ||= Faraday.new("https://api.bestbuy.com")
     end
 
     def parse(response)
