@@ -1,1 +1,12 @@
 <h1>Searched Items</h1>
+
+<% @products.each do |product| %>
+  <h3><%= product.name %></h3>
+  <ul>
+    <li>SKU: <%= product.sku %></li>
+    <li><%= product.shortDescription %></li>
+    <li>Price: <%= product.salePrice %></li>
+    <li><%= product.image %></li>
+    <li>Average Customer Review: <%= product.customerReviewAverage %></li>
+  </ul>
+<% end %>

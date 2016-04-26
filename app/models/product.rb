@@ -1,17 +1,19 @@
-class Product
+class Product < OpenStruct
 
-  def service
+  def self.service
     BestBuyService.new
   end
 
   def self.find_by(search_text)
     params = {
-      sort: "name.asc",
       show: "name,customerReviewAverage,shortDescription,salePrice,image,sku",
       pageSize: "15",
       format: "json"
     }
-    binding.pry
-    service.products(search_text, params)
+    data = service.products(search_text, params)
+
+    a = data[:products].map do |product|
+      new(product)
+    end
   end
 end

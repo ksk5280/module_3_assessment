@@ -13,6 +13,7 @@ RSpec.describe BestBuyService do
 
       search_text = "sennheiser"
       result = service.products(search_text, params)
+      binding.pry
 
       expect(result[:products].count).to eq 15
       expect(result[:products][0][:name]).to eq "Galaxy Audio - Headset Microphone - Beige"
